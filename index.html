@@ -1,0 +1,122 @@
+<!-- =========================
+FARM2HOME DEMO APP (PURE HTML, CSS, JS)
+No Python / No Flask needed
+Just open index.html in browser
+========================= --><!-- =========================
+index.html
+========================= --><!DOCTYPE html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm2Home</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f4f4;
+}.header { background: #2e7d32; color: white; padding: 15px; text-align: center; font-size: 20px; }
+
+.banner { background: url('https://images.unsplash.com/photo-1606788075761-7f3c7f8a7c61'); background-size: cover; color: white; padding: 40px 20px; text-align: center; font-weight: bold; }
+
+.section { padding: 10px; }
+
+.grid { display: flex; gap: 10px; overflow-x: auto; }
+
+.card { background: white; padding: 10px; border-radius: 10px; min-width: 120px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+.card img { width: 100%; border-radius: 10px; }
+
+button { background: #2e7d32; color: white; border: none; padding: 5px 10px; border-radius: 5px; margin-top: 5px; }
+
+.footer { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 10px; border-top: 1px solid #ccc; }
+
+.page { display: none; }
+
+.active { display: block; }
+
+</style>
+</head>
+<body><div id="home" class="page active">
+    <div class="header">Farm2Home</div><div class="banner">
+    Fresh from Farm<br>Delivered Home
+</div>
+
+<div class="section">
+    <h3>Quick Order</h3>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+            Tomato ₹10
+            <button onclick="add()">Add</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582515073490-dc52b6f6b1f1">
+            Beans ₹15
+            <button onclick="add()">Add</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1524593166156-312f362cada0">
+            Spinach ₹12
+            <button onclick="add()">Add</button>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Categories</h3>
+    <div class="grid">
+        <div class="card">Vegetables</div>
+        <div class="card">Fruits</div>
+        <div class="card">Leafy Greens</div>
+    </div>
+</div>
+
+</div><div id="subscription" class="page">
+    <div class="header">Weekly Subscription</div><div class="section">
+    <div class="card">
+        <h4>Family Veggie Box</h4>
+        ₹699/week
+        <button onclick="selectPlan()">Select</button>
+    </div>
+
+    <div class="card">
+        <h4>Couple Box</h4>
+        ₹499/week
+        <button onclick="selectPlan()">Select</button>
+    </div>
+</div>
+
+</div><div id="orders" class="page">
+    <div class="header">My Orders</div>
+    <div class="section">
+        <div class="card">
+            Order #1023<br>
+            Status: Out for Delivery
+        </div>
+    </div>
+</div><div id="story" class="page">
+    <div class="header">Our Story</div>
+    <div class="section">
+        <div class="card">
+            From our farmers to your home 🌱
+        </div>
+    </div>
+</div><div class="footer">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('subscription')">Subscription</button>
+    <button onclick="show('orders')">Orders</button>
+    <button onclick="show('story')">Story</button>
+</div><script>
+function show(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(page).classList.add('active');
+}
+
+function add() {
+    alert("Item added (Demo only)");
+}
+
+function selectPlan() {
+    alert("Plan selected (Demo only)");
+}
+</script></body>
+</html>
