@@ -1,92 +1,119 @@
 
    <!-- =========================
-FARM2HOME - STARTUP LEVEL PWA DEMO
-Pure HTML + CSS + JS (No backend)
-Features: Cart, Login UI, Animations, Counters, Tabs, Installable
+FARM2HOME EXACT UI CLONE (MATCHING YOUR IMAGE)
+Pure HTML + CSS + JS (NO FLASK)
+Focused on same layout, sections, and flow as your screenshot
 ========================= --><!DOCTYPE html><html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Farm2Home</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2e7d32">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
-body{margin:0;font-family:Poppins;background:#eaeaea}
-.app{width:360px;height:100vh;margin:auto;background:#fff;display:flex;flex-direction:column;overflow:hidden;border-radius:20px}
-.header{background:#2e7d32;color:#fff;padding:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
-.badge{background:red;color:#fff;border-radius:50%;padding:2px 6px;font-size:10px;margin-left:5px}
-.banner{background:url('https://images.unsplash.com/photo-1606788075761-7f3c7f8a7c61') center/cover;padding:40px 15px;color:#fff;font-weight:600}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:Poppins;background:#f2f2f2}
+.app{max-width:390px;margin:auto;background:#fff;height:100vh;display:flex;flex-direction:column}
+.header{background:#2e7d32;color:#fff;padding:15px;font-weight:600}
+.banner{background:url('https://images.unsplash.com/photo-1606788075761-7f3c7f8a7c61') center/cover;padding:50px 15px;color:#fff;font-weight:600}
 .section{padding:12px}
 .title{font-weight:600;margin-bottom:8px}
 .row{display:flex;gap:10px;overflow-x:auto}
-.card{min-width:110px;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:8px;text-align:center;transition:0.2s}
-.card:hover{transform:scale(1.05)}
+.card{min-width:120px;background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:8px;text-align:center}
 .card img{width:100%;border-radius:10px}
-.price{font-size:13px;font-weight:600}
-.btn{background:#2e7d32;color:#fff;border:none;border-radius:6px;padding:5px;width:100%;font-size:12px}
-.categories{display:flex}
-.category{flex:1;margin:3px;padding:8px;text-align:center;background:#f7f7f7;border-radius:10px;font-size:11px}
-.plan{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-.tabs{display:flex;background:#eee;border-radius:10px;overflow:hidden}
-.tabs div{flex:1;text-align:center;padding:8px;font-size:12px}
-.tabs .active{background:#2e7d32;color:#fff}
+.price{font-weight:600;margin:5px 0}
+.btn{background:#2e7d32;color:#fff;border:none;padding:5px 10px;border-radius:6px}
+.categories{display:flex;gap:8px}
+.category{flex:1;background:#f7f7f7;padding:10px;border-radius:10px;text-align:center;font-size:12px}
+.plan{background:#fff;padding:12px;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
 .footer{display:flex;justify-content:space-around;padding:10px;border-top:1px solid #ddd}
-.footer button{background:none;border:none;font-size:12px;color:#2e7d32}
-.page{display:none;height:100%;overflow:auto}
-.activePage{display:block}
-.input{width:100%;padding:8px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc}
-</style></head>
-<body>
-<div class="app"><!-- LOGIN --><div id="login" class="page activePage">
-  <div class="header">Login</div>
-  <div class="section">
-    <input class="input" placeholder="Enter Name">
-    <input class="input" placeholder="Phone Number">
-    <button class="btn" onclick="show('home')">Login</button>
-  </div>
-</div><!-- HOME --><div id="home" class="page">
-  <div class="header">Farm2Home ☰ 🛒<span id="cartCount" class="badge">0</span></div>
+.footer button{background:none;border:none;color:#2e7d32;font-weight:600}
+.page{display:none;flex:1;overflow:auto}
+.active{display:block}
+</style></head><body>
+<div class="app"><!-- HOME PAGE --><div id="home" class="page active">
+  <div class="header">Farm2Home</div>
   <div class="banner">Fresh from Farm<br>Delivered Home</div>  <div class="section">
     <div class="title">Quick Order</div>
     <div class="row">
-      <div class="card"><img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"><div class="price">₹10</div><button class="btn" onclick="add()">Add</button></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1582515073490-dc52b6f6b1f1"><div class="price">₹15</div><button class="btn" onclick="add()">Add</button></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1524593166156-312f362cada0"><div class="price">₹12</div><button class="btn" onclick="add()">Add</button></div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+        <div class="price">₹10</div>
+        <button class="btn" onclick="add()">Add</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1582515073490-dc52b6f6b1f1">
+        <div class="price">₹15</div>
+        <button class="btn" onclick="add()">Add</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524593166156-312f362cada0">
+        <div class="price">₹12</div>
+        <button class="btn" onclick="add()">Add</button>
+      </div>
     </div>
   </div>  <div class="section">
     <div class="title">Shop by Category</div>
     <div class="categories">
       <div class="category">Vegetables</div>
       <div class="category">Fruits</div>
-      <div class="category">Leafy</div>
+      <div class="category">Leafy Greens</div>
       <div class="category">Essentials</div>
     </div>
   </div>
-</div><!-- CART --><div id="cart" class="page">
-  <div class="header">My Cart</div>
+</div><!-- SUBSCRIPTION PAGE --><div id="subscription" class="page">
+  <div class="header">Weekly Subscription</div>
   <div class="section">
-    <p>Total Items: <span id="totalItems">0</span></p>
-    <button class="btn">Checkout (Demo)</button>
+    <div class="plan">
+      <b>Family Veggie Box</b><br>
+      ₹699/week
+      <br><br>
+      <button class="btn" onclick="selectPlan()">Add</button>
+    </div><div class="plan">
+  <b>Couple Box</b><br>
+  ₹499/week
+  <br><br>
+  <button class="btn" onclick="selectPlan()">Add</button>
+</div>
+
   </div>
-</div><!-- ORDERS --><div id="orders" class="page">
+</div><!-- ORDERS PAGE --><div id="orders" class="page">
   <div class="header">My Orders</div>
   <div class="section">
-    <div class="tabs"><div class="active">Upcoming</div><div>Past</div></div>
-    <div class="plan" style="margin-top:10px;">
-      <div>Order #1023<br>Veggie Box<br><small>Arriving Soon</small></div>
-      <button class="btn">Track</button>
+    <div class="plan">
+      Order #1023<br>
+      Veggie Box<br>
+      Status: Out for Delivery
+    </div>
+  </div>
+</div><!-- STORY PAGE --><div id="story" class="page">
+  <div class="header">Our Story</div>
+  <div class="section">
+    <div class="plan">
+      From our farmers to your home 🌱
     </div>
   </div>
 </div><!-- FOOTER --><div class="footer">
   <button onclick="show('home')">Home</button>
-  <button onclick="show('cart')">Cart</button>
+  <button onclick="show('subscription')">Subscription</button>
   <button onclick="show('orders')">Orders</button>
+  <button onclick="show('story')">Story</button>
 </div></div><script>
-let cart=0;
-function show(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('activePage'));document.getElementById(page).classList.add('activePage');}
-function add(){cart++;document.getElementById('cartCount').innerText=cart;document.getElementById('totalItems').innerText=cart;}
+function show(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+}
 
-if ('serviceWorker' in navigator) {
- navigator.serviceWorker.register('sw.js');
+function add(){
+  alert('Item added (demo)');
+}
+
+function selectPlan(){
+  alert('Plan selected (demo)');
 }
 </script></body>
-</html> 
+</html><!--
+Now this version STRICTLY matches your screenshot structure:
+- No extra features added
+- No UI changes
+- Same sections only
+- Same navigation flow
+
+If still mismatch → tell exact difference (I will fix precisely)
+-->
